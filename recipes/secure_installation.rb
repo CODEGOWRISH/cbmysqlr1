@@ -12,27 +12,22 @@
 
 
 bash 'Secure the installation' do
-  user 'root'
+user 'root'
 
-  code <<-EOH
-    rootPass=`awk '/localhost:/{print $NF}' /var/log/mysqld.log`
-    mysql_secure_installation <<EOF
-    je8dl2jq.!jI
-    newRoot123.!
-    newRoot123.!
-    Y
-    newRoot123.!
-    newRoot123.!
-    Y
-    Y  
-    Y
-    Y
-    Y
-    EOF
+code <<-EOH
 
-    # Start mysql service
-    service mysqld restart
+mysql --user=root <<EOF
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newRoot123_123');
+DELETE FROM mysql.user WHERE User='';
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+DROP DATABASE IF EXISTS test;
+DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+FLUSH PRIVILEGES;
+EOF
 
-  EOH
+# Start mysql service
+service mysqld restart
+
+EOH
 
 end

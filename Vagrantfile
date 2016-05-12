@@ -111,8 +111,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::create_server_cnf]', 'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]', 'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]'
-      #'recipe[cbmysqlr1::secure_installation]'
-      'recipe[cbmysqlr1::create_server_cnf]'
+      'recipe[cbmysqlr1::secure_installation]'
+      #'recipe[cbmysqlr1::create_server_cnf]'
       #'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::create_server_cnf]'
     ]
