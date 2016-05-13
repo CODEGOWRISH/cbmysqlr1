@@ -18,8 +18,8 @@ CREATE DATABASE IF NOT EXISTS hr;
 USE hr;
 
 -- Create tablespace (NOTE - in MYSQL only.  MARIADB does NOT have Tablespaces)
---CREATE TABLESPACE 'HR_TS' ADD DATAFILE 'HR_TS1.ibd';
-	-- FILE_BLOCK_SIZE is not required for NON-COMPRESSED tables
+-- CREATE TABLESPACE 'HR_TS' ADD DATAFILE 'HR_TS1.ibd';
+-- FILE_BLOCK_SIZE is not required for NON-COMPRESSED tables
 
 -- Create tables
 CREATE TABLE IF NOT EXISTS dept (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  name VARCHAR(20));
