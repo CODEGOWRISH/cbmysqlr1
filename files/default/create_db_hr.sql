@@ -5,10 +5,10 @@
 --
 
 -- User to connect locally
-CREATE USER IF  NOT EXISTS 'hruserl'@'localhost' identified by 'hruserl';
+CREATE USER IF  NOT EXISTS 'hruserl'@'localhost' identified by 'hr123_HR123';
 
 -- User to connect from 'ALL' remote machines
-CREATE USER IF NOT EXISTS 'hruserr'@'%' identified by 'hruserr';
+CREATE USER IF NOT EXISTS 'hruserr'@'%' identified by 'hr123_HR123';
 
 -- User to connect from specific remote machines
 -- TBD

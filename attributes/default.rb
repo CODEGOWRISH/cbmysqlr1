@@ -4,6 +4,8 @@
 #
 #
 
+default['rootPass']='root123_ROOT123'
+
 #default['softwareStageDir'] = '/vagrant/MariaDB'
 default['softwareStageDir'] = '/mysql-rpms'
 

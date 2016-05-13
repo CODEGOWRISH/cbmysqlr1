@@ -103,13 +103,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       #
       # This line has the full sequence
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
-      'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]'
+      #'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]'
       #
       #
       # This line onwards are custom ones
       #'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::create_dirs_files]'
-      #'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
+      'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
       #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]', 'recipe[cbmysqlr1::create_db_hr]'

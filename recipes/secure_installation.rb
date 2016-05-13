@@ -10,7 +10,6 @@
 #  Reference:  http://www.tecmint.com/install-mariadb-in-linux/
 #
 
-
 bash 'Secure the installation' do
 user 'root'
 

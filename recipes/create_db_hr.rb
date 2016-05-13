@@ -19,7 +19,7 @@ bash 'Create database HR and its objects' do
   user 'root'
 
   code <<-EOH
-    mysql -u root -pnewRoot123_123 < "/tmp/#{theFile}"       
+    mysql --user=root --password=#{node[:rootPass]} < "/tmp/#{theFile}"
   EOH
 
 end
