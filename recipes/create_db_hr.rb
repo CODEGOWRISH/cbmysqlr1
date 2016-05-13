@@ -14,12 +14,12 @@ cookbook_file "/tmp/#{theFile}" do
 end
 
 # Run the SQL using mysql user root
-bash 'Create database HR and its objects' do 
+bash 'Create database HR and its objects' do
 
   user 'root'
 
   code <<-EOH
-    mysql -u root -proot < "/tmp/#{theFile}"       
+    mysql -u root -pnewRoot123_123 < "/tmp/#{theFile}"       
   EOH
-  
+
 end

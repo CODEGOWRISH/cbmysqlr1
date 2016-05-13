@@ -41,3 +41,4 @@ Include `cbmysqlr1` in your node's `run_list`:
 
 Author:: YOUR_NAME (<YOUR_EMAIL>)
 # cbmysqlr1
+# cbmysqlr1

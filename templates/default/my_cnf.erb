@@ -29,11 +29,9 @@ pid-file=/var/run/mysqld/mysqld.pid
 # Lines from default my.cnf - end
 
 # additional lines for [mysqld]
-#log-bin = <%= @binlogName %>
-#expire_logs_days = <%= @expireLogDays %>
-## binary logging format mixed recommended
-#binlog_format = <%= @binlogFormat %>
-
-[client]
-user=root
-password=je8dl2jq.!jI
+server-id=1
+log-bin = <%= @binlogName %>
+log-bin-index = <%= @binlogIndex %>
+expire_logs_days = <%= @expireLogDays %>
+# binary logging format mixed recommended
+binlog_format = <%= @binlogFormat %>

@@ -16,8 +16,20 @@ user 'root'
 
 code <<-EOH
 
-mysql --user=root <<EOF
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newRoot123_123');
+initialRootPw=`awk '/localhost:/{print $NF}' /var/log/mysqld.log`
+echo "" > /tmp/my.cnf
+echo "" > /tmp/my.cnf
+echo "[client]" >> /tmp/my.cnf
+echo "user=root" >> /tmp/my.cnf
+echo "password=$initialRootPw" >> /tmp/my.cnf
+cat /tmp/my.cnf >> /etc/my.cnf
+
+# restart mysql service
+service mysqld restart
+
+#
+mysql --connect-expired-password --user=root <<EOF
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('#{node[:rootPass]}');
 DELETE FROM mysql.user WHERE User='';
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DROP DATABASE IF EXISTS test;

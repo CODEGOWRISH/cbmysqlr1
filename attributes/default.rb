@@ -43,17 +43,18 @@ default['myCnfFile'] = '/etc/my.cnf'
 
 # Directories - datadir, binlog dir, db dir
 default['dirList'] = {
-                        'rootBase'   => '/data',
-                        'mysqlBase'  => '/data/mysql',
-                        'dataDir'    => '/data/mysql/data',
-                        'binlogDir'  => '/data/mysql/binlog',
-                        'dbDir'      => '/data/mysql/db',
-                        'hrDbDir'    => '/data/mysql/db/hr'
+                        'rootBase'   => '/mysqldata',
+                        'mysqlBase'  => '/mysqldata/mysql',
+                        'dataDir'    => '/mysqldata/mysql/data',
+                        'binlogDir'  => '/mysqldata/mysql/binlog',
+                        'dbDir'      => '/mysqldata/mysql/db',
+                        'hrDbDir'    => '/mysqldata/mysql/db/hr'
                      }
 
-default['binlogName']     = 'mysql-binlog'
-default['expireLogDays']  = '2'
-default['binlogFormat']   = 'mixed'
+default['binlogName']         = '/mysqldata/mysql/binlog/binlog'
+default['binlogIndex']        = '/mysqldata/mysql/binlog/binlog.index'
+default['expireLogDays']      = '2'
+default['binlogFormat']       = 'mixed'
 
 # HR DB SQL File
 default['crDbHrSqlFile'] = 'create_db_hr.sql'

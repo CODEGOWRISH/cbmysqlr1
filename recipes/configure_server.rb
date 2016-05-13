@@ -24,6 +24,7 @@ template node[:myCnfFile] do
 
   variables({
     :binlogName     => node[:binlogName],
+    :binlogIndex    => node[:binlogIndex],
     :expireLogDays  => node[:expireLogDays],
     :binlogFormat   => node[:binlogFormat]
     })
