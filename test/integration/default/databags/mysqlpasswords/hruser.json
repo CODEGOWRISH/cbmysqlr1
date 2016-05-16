@@ -1,0 +1,9 @@
+{
+  "id": "hruser",
+  "password": {
+    "encrypted_data": "fP3jhLxPINEwS7vb5cypuMlHU7Z0rgNIE5HFSTlWPw8=\n",
+    "iv": "4MARpX6MxUf9MI280jf/yg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

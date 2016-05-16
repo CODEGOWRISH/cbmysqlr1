@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-
+  config.vm.network "forwarded_port", guest: 3306, host: 13306, protocol: "tcp"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -84,6 +84,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   config.vm.provision :chef_solo do |chef|
+
+    chef.data_bags_path = 'test\integration\default\databags'
+    chef.encrypted_data_bag_secret_key_path = 'test\integration\default\databags\secret-key.txt'
+
     chef.json = {
       mysql: {
         server_root_password: 'rootpass',
@@ -93,16 +97,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-
-      'recipe[cbmysqlr1::default]'
-    ]
-
-    chef.run_list = [
       # Original 'default' recipe
       #'recipe[cbmysqlr1::default]'
+      'recipe[cbmysqlr1::databag-display]'
       #
       # This line has the full sequence
-      'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
+      #'recipe[cbmysqlr1::default]', 'recipe[cbmysqlr1::install_rpms]', 'recipe[cbmysqlr1::secure_installation]', 'recipe[cbmysqlr1::create_dirs_files]', 'recipe[cbmysqlr1::configure_server]', 'recipe[cbmysqlr1::create_db_hr]'
       #
       #
       # This line onwards are custom ones

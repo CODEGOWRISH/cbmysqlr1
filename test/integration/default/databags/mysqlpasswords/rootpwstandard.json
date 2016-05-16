@@ -1,0 +1,9 @@
+{
+  "id": "rootpwstandard",
+  "password": {
+    "encrypted_data": "DDarrvvnRM9X8HCw1KqQ1MSr6yONZQDd1jm8PJAQT8ySLxhIAlijdRo2gBrD\nJysa\n",
+    "iv": "7piTTpYdifCa0t5bfN7IRw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
