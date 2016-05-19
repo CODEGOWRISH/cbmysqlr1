@@ -29,10 +29,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.box = 'oraclelinux-7-x86_64-chef2'
   config.vm.box = 'oraclelinux-7-x86_64-chef-and-deps2'
 
-  # Gowrish customize
   config.ssh.password = 'vagrant'
 
-  # Gowrish customize
   config.vm.synced_folder "../../stage/MySQL/db-server-rpm-V137790-01", "/mysql-rpms"
 
   # Assign this VM to a host-only network IP, allowing you to access it
