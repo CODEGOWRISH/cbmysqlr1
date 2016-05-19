@@ -1,8 +1,8 @@
-#
+#------------------------
 #
 #  Attributes file
 #
-#
+#------------------------
 
 default['rootPass']='root123_ROOT123'
 
